@@ -1,0 +1,417 @@
+{
+  "sample_data": [
+    {
+      "Column Name": "outletcode",
+      "Description": "Unique code assigned to the outlet/store.",
+      "Data Format": "String",
+      "Sample Data": "0005643-WBA-SD-RAPID CITY"
+    },
+    {
+      "Column Name": "outletname",
+      "Description": "Name of the outlet/store.",
+      "Data Format": "String",
+      "Sample Data": "Walgreens 05643"
+    },
+    {
+      "Column Name": "sessionstatus",
+      "Description": "Status of the session (e.g., Complete, In Progress).",
+      "Data Format": "String",
+      "Sample Data": "Complete"
+    },
+    {
+      "Column Name": "sessionstartdatetime",
+      "Description": "Start timestamp of the session.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "1477-06-19T00:00:00.000Z"
+    },
+    {
+      "Column Name": "sessionenddatetime",
+      "Description": "End timestamp of the session.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "1477-06-20T00:00:00.000Z"
+    },
+    {
+      "Column Name": "ID",
+      "Description": "IR system-generated ID.",
+      "Data Format": "Integer",
+      "Sample Data": "2837553"
+    },
+    {
+      "Column Name": "SessionUID",
+      "Description": "Unique identifier for the survey session.",
+      "Data Format": "String",
+      "Sample Data": "b5480c15-f910-4685-8a3e-9b1c2aa8780b"
+    },
+    {
+      "Column Name": "SceneUID",
+      "Description": "Unique identifier for the scene within a survey session.",
+      "Data Format": "String",
+      "Sample Data": "0134670f-9520-4f0e-86bd-bdda131afc04"
+    },
+    {
+      "Column Name": "Shelf",
+      "Description": "Number of a shelf in a Cooler/Shelf.",
+      "Data Format": "Integer",
+      "Sample Data": "3"
+    },
+    {
+      "Column Name": "Position",
+      "Description": "Number of a column in Cooler/Shelf.",
+      "Data Format": "Integer",
+      "Sample Data": "4"
+    },
+    {
+      "Column Name": "StockPos",
+      "Description": "If products are stacked, this value represents their position (1, 2, 3…).",
+      "Data Format": "Integer",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "BlockID",
+      "Description": "Image Block ID, representing groups of images.",
+      "Data Format": "Integer",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "DoorIndex",
+      "Description": "Number of a cooler door.",
+      "Data Format": "Integer",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "OrientationId",
+      "Description": "Product orientation on the shelf (-1 = Front Facing, 0 = Side Facing).",
+      "Data Format": "Integer",
+      "Sample Data": "-1"
+    },
+    {
+      "Column Name": "ProductID",
+      "Description": "Unique internal product ID.",
+      "Data Format": "Integer",
+      "Sample Data": "47902"
+    },
+    {
+      "Column Name": "ProductName",
+      "Description": "Main product name as displayed (Brand + SubBrand + Flavor + Package + Size).",
+      "Data Format": "String",
+      "Sample Data": "SPRITE 3.00 L PET 6"
+    },
+    {
+      "Column Name": "ShortName",
+      "Description": "Shortened product name (used for mobile applications & reporting, max 50 characters).",
+      "Data Format": "String",
+      "Sample Data": "Sprite Lemon Lime Plastic Bottle 3000 ml"
+    },
+    {
+      "Column Name": "SKU",
+      "Description": "Unique Stock Keeping Unit provided by the client.",
+      "Data Format": "String",
+      "Sample Data": "77736948"
+    },
+    {
+      "Column Name": "UPC",
+      "Description": "Universal Product Code (UPC in US, EAN in Europe).",
+      "Data Format": "String",
+      "Sample Data": "7840058007902"
+    },
+    {
+      "Column Name": "BAN",
+      "Description": "Base Article Number from the client's ERP system.",
+      "Data Format": "String",
+      "Sample Data": "1027800"
+    },
+    {
+      "Column Name": "Type",
+      "Description": "Type of the product (e.g., SKU, POP, BRAND, OTHER).",
+      "Data Format": "String",
+      "Sample Data": "SKU"
+    },
+    {
+      "Column Name": "BrandName",
+      "Description": "Brand name of the product.",
+      "Data Format": "String",
+      "Sample Data": null
+    },
+    {
+      "Column Name": "ProductCategory",
+      "Description": "Product category based on client or group standards (SSD, Water, Energy, etc.).",
+      "Data Format": "String",
+      "Sample Data": "Energy"
+    },
+    {
+      "Column Name": "BeverageType",
+      "Description": "Beverage type classification (NCB, SSD, Energy).",
+      "Data Format": "String",
+      "Sample Data": "NCB"
+    },
+    {
+      "Column Name": "LocalProductCategoryName",
+      "Description": "Client-specific product categorization for reporting.",
+      "Data Format": "String",
+      "Sample Data": "Colas"
+    },
+    {
+      "Column Name": "ProductLocalSubCategoryName",
+      "Description": "More detailed client-specific product categorization.",
+      "Data Format": "String",
+      "Sample Data": "COLAS"
+    },
+    {
+      "Column Name": "SingleFacings",
+      "Description": "Number of forward facings for a single SKU in a multipack.",
+      "Data Format": "Integer",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "SellingPackSize",
+      "Description": "Number of single items inside a package (e.g., 1, 4, 6, 12, 24).",
+      "Data Format": "Decimal(18,4)",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "IsEmpty",
+      "Description": "Indicates whether the shelf space is empty (1 = Empty, 0 = Filled).",
+      "Data Format": "Boolean",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "IsForeign",
+      "Description": "Whether the product belongs to a competing manufacturer (1 = Foreign, 0 = Client's own product).",
+      "Data Format": "Boolean",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "GlobalId",
+      "Description": "If the client uses any Global ID internally.",
+      "Data Format": "String",
+      "Sample Data": null
+    },
+    {
+      "Column Name": "PIMId",
+      "Description": "Client Product Information Management System ID (unique, optional).",
+      "Data Format": "String",
+      "Sample Data": null
+    },
+    {
+      "Column Name": "REId",
+      "Description": "Image Recognition Engine Unique ID.",
+      "Data Format": "String",
+      "Sample Data": "117807"
+    },
+    {
+      "Column Name": "FileCreatedTime",
+      "Description": "Timestamp when data was exported to the Data Lake.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "2020-09-25 21:08:52"
+    },
+    {
+      "Column Name": "SliceStartTime",
+      "Description": "Start time of the data export window.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "2020-09-25T21:08:51.997+0000"
+    },
+    {
+      "Column Name": "SliceEndTime",
+      "Description": "End time of the data export window.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "2020-09-25T21:08:51.997+0000"
+    },
+    {
+      "Column Name": "ReExportStatus",
+      "Description": "1 if session was re-exported due to reprocessing, 0 otherwise.",
+      "Data Format": "Integer",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "ReExportTime",
+      "Description": "Timestamp when the session was re-exported.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "9/17/21 7:50"
+    },
+    {
+      "Column Name": "ReProcessedStatus",
+      "Description": "1 if a scene in the session was reprocessed, 0 otherwise.",
+      "Data Format": "Integer",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "ReProcessedTime",
+      "Description": "Latest timestamp when a scene was reprocessed.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "9/17/21 7:50"
+    },
+    {
+      "Column Name": "IRGuessedCategory",
+      "Description": "Guessed category if IsForeign = 1 and IsEmpty = 1.",
+      "Data Format": "String",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "IRActualID",
+      "Description": "Unique identifier.",
+      "Data Format": "BigInt",
+      "Sample Data": "1"
+    },
+    {
+      "Column Name": "ProductWidth",
+      "Description": "Recognized width of the product.",
+      "Data Format": "Decimal",
+      "Sample Data": "2.491"
+    },
+    {
+      "Column Name": "ProductHeight",
+      "Description": "Recognized height of the product.",
+      "Data Format": "Decimal",
+      "Sample Data": "5.887"
+    },
+    {
+      "Column Name": "ShelfWidth",
+      "Description": "Recognized width of the shelf.",
+      "Data Format": "Decimal",
+      "Sample Data": "137.779"
+    },
+    {
+      "Column Name": "ShelfHeight",
+      "Description": "Recognized height of the shelf.",
+      "Data Format": "Decimal",
+      "Sample Data": "77.097"
+    },
+    {
+      "Column Name": "BlockWidth",
+      "Description": "Recognized width of the block.",
+      "Data Format": "Decimal",
+      "Sample Data": "137.779"
+    },
+    {
+      "Column Name": "BlockHeight",
+      "Description": "Recognized height of the block.",
+      "Data Format": "Decimal",
+      "Sample Data": "77.097"
+    },
+    {
+      "Column Name": "FullnessStatus",
+      "Description": "Basket fullness data for the horizontal cooler.",
+      "Data Format": "String",
+      "Sample Data": "Three Quarters"
+    },
+    {
+      "Column Name": "HE_FLAG",
+      "Description": "Indicates whether the product is high efficiency (true/false).",
+      "Data Format": "Boolean",
+      "Sample Data": "FALSE"
+    },
+    {
+      "Column Name": "MSL_FLAG",
+      "Description": "Indicates whether the product meets Minimum Stock Level requirements (true/false).",
+      "Data Format": "Boolean",
+      "Sample Data": "FALSE"
+    },
+    {
+      "Column Name": "OOO_FLAG",
+      "Description": "Indicates if the product is out of order (true/false).",
+      "Data Format": "Boolean",
+      "Sample Data": "FALSE"
+    },
+    {
+      "Column Name": "AVAILABLE_FLAG",
+      "Description": "Indicates if the product is available (true/false).",
+      "Data Format": "Boolean",
+      "Sample Data": "TRUE"
+    },
+    {
+      "Column Name": "YYYY",
+      "Description": "Year of the session.",
+      "Data Format": "Integer",
+      "Sample Data": "2024"
+    },
+    {
+      "Column Name": "MM",
+      "Description": "Month of the session.",
+      "Data Format": "Integer",
+      "Sample Data": "5"
+    },
+    {
+      "Column Name": "DD",
+      "Description": "Day of the session.",
+      "Data Format": "Integer",
+      "Sample Data": "9"
+    },
+    {
+      "Column Name": "REGION_COUNTRY_CODE",
+      "Description": "Region and country code in a standardized format.",
+      "Data Format": "String",
+      "Sample Data": "na-us"
+    },
+    {
+      "Column Name": "LOAD_JOB_ID",
+      "Description": "Unique identifier for the data load job.",
+      "Data Format": "String",
+      "Sample Data": "488268464368947481"
+    },
+    {
+      "Column Name": "RECORD_CREATE_TIMESTAMP",
+      "Description": "Timestamp when the record was created.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "2024-10-15T12:14:41.123Z"
+    },
+    {
+      "Column Name": "RECORD_UPDATE_TIMESTAMP",
+      "Description": "Timestamp when the record was last updated.",
+      "Data Format": "TimeStamp",
+      "Sample Data": "2024-10-15T12:14:41.123Z"
+    },
+    {
+      "Column Name": "random_number",
+      "Description": "Random number assigned to the record, possibly for sampling or validation.",
+      "Data Format": "Decimal",
+      "Sample Data": "0.2"
+    }
+  ],
+  "metadata": {
+    "filename": "metadata.json",
+    "total_rows": 61,
+    "total_columns": 4,
+    "columns": {
+      "Column Name": {
+        "data_type": "object",
+        "null_count": 0,
+        "unique_values": 61,
+        "sample_values": [
+          "outletcode",
+          "outletname",
+          "sessionstatus"
+        ]
+      },
+      "Description": {
+        "data_type": "object",
+        "null_count": 0,
+        "unique_values": 61,
+        "sample_values": [
+          "Unique code assigned to the outlet/store.",
+          "Name of the outlet/store.",
+          "Status of the session (e.g., Complete, In Progress)."
+        ]
+      },
+      "Data Format": {
+        "data_type": "object",
+        "null_count": 0,
+        "unique_values": 7,
+        "sample_values": [
+          "String",
+          "String",
+          "String"
+        ]
+      },
+      "Sample Data": {
+        "data_type": "object",
+        "null_count": 3,
+        "unique_values": 41,
+        "sample_values": [
+          "0005643-WBA-SD-RAPID CITY",
+          "Walgreens 05643",
+          "Complete"
+        ]
+      }
+    }
+  }
+}

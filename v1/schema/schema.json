@@ -1,0 +1,236 @@
+{
+    "tables": [
+        {
+            "table": "brands",
+            "row_count": 10,
+            "columns": [
+                {
+                    "column_name": "brand_id",
+                    "data_type": "integer",
+                    "is_nullable": "NO",
+                    "default": "nextval('brands_brand_id_seq'::regclass)",
+                    "character_maximum_length": null,
+                    "numeric_precision": 32,
+                    "numeric_scale": 0,
+                    "key_type": "PRIMARY KEY",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: integer | Not Nullable | Default: nextval('brands_brand_id_seq'::regclass) | PRIMARY KEY"
+                },
+                {
+                    "column_name": "brand_name",
+                    "data_type": "character varying",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": 100,
+                    "numeric_precision": null,
+                    "numeric_scale": null,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: character varying | Length: 100 | Nullable"
+                },
+                {
+                    "column_name": "category",
+                    "data_type": "character varying",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": 50,
+                    "numeric_precision": null,
+                    "numeric_scale": null,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: character varying | Length: 50 | Nullable"
+                },
+                {
+                    "column_name": "established_year",
+                    "data_type": "integer",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": null,
+                    "numeric_precision": 32,
+                    "numeric_scale": 0,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: integer | Nullable"
+                }
+            ]
+        },
+        {
+            "table": "outlets",
+            "row_count": 15,
+            "columns": [
+                {
+                    "column_name": "outlet_id",
+                    "data_type": "integer",
+                    "is_nullable": "NO",
+                    "default": "nextval('outlets_outlet_id_seq'::regclass)",
+                    "character_maximum_length": null,
+                    "numeric_precision": 32,
+                    "numeric_scale": 0,
+                    "key_type": "PRIMARY KEY",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: integer | Not Nullable | Default: nextval('outlets_outlet_id_seq'::regclass) | PRIMARY KEY"
+                },
+                {
+                    "column_name": "outlet_name",
+                    "data_type": "character varying",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": 100,
+                    "numeric_precision": null,
+                    "numeric_scale": null,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: character varying | Length: 100 | Nullable"
+                },
+                {
+                    "column_name": "location",
+                    "data_type": "character varying",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": 100,
+                    "numeric_precision": null,
+                    "numeric_scale": null,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: character varying | Length: 100 | Nullable"
+                },
+                {
+                    "column_name": "size_sqft",
+                    "data_type": "integer",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": null,
+                    "numeric_precision": 32,
+                    "numeric_scale": 0,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: integer | Nullable"
+                }
+            ]
+        },
+        {
+            "table": "sales",
+            "row_count": 1200,
+            "columns": [
+                {
+                    "column_name": "sale_id",
+                    "data_type": "integer",
+                    "is_nullable": "NO",
+                    "default": "nextval('sales_sale_id_seq'::regclass)",
+                    "character_maximum_length": null,
+                    "numeric_precision": 32,
+                    "numeric_scale": 0,
+                    "key_type": "PRIMARY KEY",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: integer | Not Nullable | Default: nextval('sales_sale_id_seq'::regclass) | PRIMARY KEY"
+                },
+                {
+                    "column_name": "outlet_id",
+                    "data_type": "integer",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": null,
+                    "numeric_precision": 32,
+                    "numeric_scale": 0,
+                    "key_type": "FOREIGN KEY",
+                    "foreign_table": "outlets",
+                    "foreign_column": "outlet_id",
+                    "details": "Type: integer | Nullable | FOREIGN KEY | References outlets(outlet_id)"
+                },
+                {
+                    "column_name": "sale_date",
+                    "data_type": "date",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": null,
+                    "numeric_precision": null,
+                    "numeric_scale": null,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: date | Nullable"
+                },
+                {
+                    "column_name": "units_sold",
+                    "data_type": "integer",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": null,
+                    "numeric_precision": 32,
+                    "numeric_scale": 0,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: integer | Nullable"
+                },
+                {
+                    "column_name": "revenue",
+                    "data_type": "numeric",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": null,
+                    "numeric_precision": 10,
+                    "numeric_scale": 2,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: numeric | Precision: 10, Scale: 2 | Nullable"
+                },
+                {
+                    "column_name": "promotion_flag",
+                    "data_type": "boolean",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": null,
+                    "numeric_precision": null,
+                    "numeric_scale": null,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: boolean | Nullable"
+                },
+                {
+                    "column_name": "brand_name",
+                    "data_type": "character varying",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": 100,
+                    "numeric_precision": null,
+                    "numeric_scale": null,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: character varying | Length: 100 | Nullable"
+                },
+                {
+                    "column_name": "product_name",
+                    "data_type": "character varying",
+                    "is_nullable": "YES",
+                    "default": null,
+                    "character_maximum_length": 200,
+                    "numeric_precision": null,
+                    "numeric_scale": null,
+                    "key_type": "",
+                    "foreign_table": null,
+                    "foreign_column": null,
+                    "details": "Type: character varying | Length: 200 | Nullable"
+                }
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "source": "sales.outlet_id",
+            "references": "outlets.outlet_id"
+        }
+    ]
+}

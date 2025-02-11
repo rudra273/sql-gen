@@ -1,0 +1,22 @@
+[
+  {
+    "input": "Show empty shelves in Walgreens",
+    "sql": "SELECT outletname, SHELF, POSITION, PRODUCTNAME FROM {table_name} WHERE outletname LIKE '%Walgreens%' AND ISEMPTY = true",
+    "tables": "{table_name}"
+  },
+  {
+    "input": "List all customers from New York",
+    "sql": "SELECT customer_id, name, city FROM {table_name} WHERE city = 'New York'",
+    "tables": "{table_name}"
+  },
+  {
+    "input": "Show me all the brands available",
+    "sql": "SELECT DISTINCT brand FROM {table_name}",
+    "tables": "{table_name}"
+  },
+  {
+    "input": "I want to see all the brands in all the outlets",
+    "sql": "SELECT outletname, ARRAY_AGG(DISTINCT brand) AS brands FROM {table_name} GROUP BY outletname",
+    "tables": "{table_name}"
+  }
+]

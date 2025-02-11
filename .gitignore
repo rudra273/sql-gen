@@ -1,0 +1,6 @@
+*.csv
+*.db
+.env
+.gradio/
+*.bin
+*.sqlite3

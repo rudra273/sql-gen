@@ -1,0 +1,72 @@
+{
+    "outlets.csv": [
+        {
+            "column_name": "outlet_id",
+            "description": "PRIMARY KEY; Not Nullable; Identifier field"
+        },
+        {
+            "column_name": "outlet_name",
+            "description": "Type: character varying; Descriptive name field; Store name with location number"
+        },
+        {
+            "column_name": "location",
+            "description": "Type: character varying; Geographic location of the store"
+        },
+        {
+            "column_name": "size_sqft",
+            "description": "Type: integer; Store size in square feet"
+        }
+    ],
+    "brands.csv": [
+        {
+            "column_name": "brand_id",
+            "description": "PRIMARY KEY; Not Nullable; Identifier field"
+        },
+        {
+            "column_name": "brand_name",
+            "description": " Not Nullable; Descriptive name field; Unique brand identifier name"
+        },
+        {
+            "column_name": "category",
+            "description": "  Not Nullable; Product category classification"
+        },
+        {
+            "column_name": "established_year",
+            "description": " Not Nullable; Year when the brand was establishedx"
+        }
+    ],
+    "sales.csv": [
+        {
+            "column_name": "sale_id",
+            "description": "PRIMARY KEY; Not Nullable; Identifier field"
+        },
+        {
+            "column_name": "outlet_id",
+            "description": "FOREIGN KEY; Not Nullable; Identifier field; References outlets table"
+        },
+        {
+            "column_name": "sale_date",
+            "description": "Type: date; Date/time information; Records transaction date"
+        },
+        {
+            "column_name": "units_sold",
+            "description": "Type: integer; Quantity of units sold in transaction"
+        },
+        {
+            "column_name": "revenue",
+            "description": "Type: numeric;  Revenue amount; Total revenue for the transaction"
+        },
+        {
+            "column_name": "promotion_flag",
+            "description": "Type: boolean; Boolean indicator; Indicates if sale was under promotion"
+        },
+        {
+            "column_name": "brand_name",
+            "description": "Type: character varying; Descriptive name field; Brand name of the product sold"
+        },
+        {
+            "column_name": "product_name",
+            "description": "Type: character varying; Descriptive name field; Complete product name including brand and details"
+        }
+    ]
+}
