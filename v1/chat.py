@@ -8,6 +8,7 @@ from langchain_openai import AzureOpenAIEmbeddings, AzureChatOpenAI
 from langchain_chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain.chains import LLMChain
+from langchain.schema.runnable import RunnableLambda
 
 def load_env_variables():
     """Load environment variables"""
@@ -78,7 +79,9 @@ Rules:
 3. Apply business rules from metadata
 4. Ensure proper JOIN conditions
 5. Handle NULL values appropriately
-6. Return ONLY the SQL query without explanation"""),
+6. Return ONLY the SQL query without explanation
+7. When user asks to all the tables give the query to disply the tables dont use table directly there.
+8. Ensure string comparisons are case-insensitive. Use `ILIKE` instead of `=` when filtering text values. """),
         ("human", """Schema Information:
 {schema}
 
@@ -91,14 +94,30 @@ Generate the SQL query:""")
     ])
     
     try:
-        chain = LLMChain(llm=llm, prompt=prompt)
-        response = chain.run(
-            schema=schema_context,
-            context=metadata_context,
-            query=user_query
-        )
+        # old
+        # chain = LLMChain(llm=llm, prompt=prompt)
+        # response = chain.run(
+        #     schema=schema_context,
+        #     context=metadata_context,
+        #     query=user_query
+        # )
+
+        # return response.replace("```sql", "").replace("```", "").strip()
+
+
+        chain = prompt | llm
+        response = chain.invoke({
+            "schema": schema_context,
+            "context": metadata_context,
+            "query": user_query
+        })
+
+        sql_query = response.content 
+
+        # Now you can safely use replace
+        sql_query = sql_query.replace("```sql", "").replace("```", "").strip()
         
-        return response.replace("```sql", "").replace("```", "").strip()
+        return sql_query
     except Exception as e:
         return f"Error generating query: {str(e)}"
 
@@ -227,15 +246,6 @@ def create_gradio_interface(
     
     with gr.Blocks() as interface:
         gr.Markdown("# Natural Language to PostgreSQL Query Generator")
-        # gr.Markdown("""
-        # Ask questions about your PostgreSQL database in natural language.
-        # The system will:
-        # 1. Generate appropriate SQL queries using your database schema
-        # 2. Execute them against your PostgreSQL database
-        # 3. Show you both the query and results
-        
-        # Note: The system uses schema information and metadata to generate accurate queries.
-        # """)
         
         chatbot = gr.Chatbot(
             label="Chat History",
@@ -275,7 +285,6 @@ def main():
     demo.launch(
         server_name="0.0.0.0",
         server_port=7860,
-        share=True
     )
 
 if __name__ == "__main__":
